@@ -71,15 +71,3 @@ int size(){
         return 0;
     }
 }
-
-int main(){
-    empty();
-    std::string input;
-    std::cin >> input;
-    pushString(input);
-    empty();
-    std::cout << size() << std::endl;
-    std::cout << pop() << pop() << pop() << pop() << std::endl;
-    std::cout << size() << std::endl;
-    system("pause");
-}
