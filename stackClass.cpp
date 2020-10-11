@@ -4,6 +4,7 @@
 
 stackClass *topNode = nullptr;
 
+//Takes char data and push it into the stack
 void push(char _inValue){
     stackClass* newNode = new stackClass;
     newNode -> data = _inValue;
