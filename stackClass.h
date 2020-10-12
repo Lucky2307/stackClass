@@ -1,5 +1,5 @@
 //stackClass.h
-#pragma once
+// #pragma once
 
 #include <iostream>
 
@@ -14,10 +14,11 @@ public:
 
     void push(char _inValue);
     void pushString(std::string _inString);
-    bool empty();
+    bool isEmpty();
     char pop();
     void display();
     int size();
+    char peekTop();
 };
 
 // stackClass::stackClass(/* args */)
@@ -27,4 +28,3 @@ public:
 // stackClass::~stackClass()
 // {
 // }
-
