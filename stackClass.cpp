@@ -1,7 +1,7 @@
 #include "stackClass.h"
 #include <iostream>
 
-
+// Maybe the topnode should be a private attribute?
 stackClass *topNode = nullptr;
 
 //Takes char data and push it into the stack
@@ -47,10 +47,22 @@ void display(){
     if(topNode != NULL){
         stackClass* pointer = new stackClass;
         pointer = topNode;
-        while (pointer -> nextNode != NULL){
-            std::cout << pointer -> data;
+        // my compiler only prints until the second last element
+        // e.g if i pushed the string 'abcdef' it only prints 'fedcb'. so yeah...
+
+        // while (pointer -> nextNode != NULL){
+        //     std::cout << pointer -> data;
+        //     pointer = pointer -> nextNode;
+        // }
+
+        int count = 0;
+        int max = this->size();
+        while (count < max){
+            std::cout << (pointer -> data);
             pointer = pointer -> nextNode;
+            count++;
         }
+        std::cout << std::endl;
     } else {
         std::cout << "Stack is empty" << std::endl;
     }
@@ -71,4 +83,14 @@ int size(){
         std::cout << "Stack is empty" << std::endl;
         return 0;
     }
+}
+
+// Returns the top of the stack without popping
+char stackClass::peekTop(){
+    int max = this->size();
+    if (max <= 0)
+    {
+        return '\0';
+    }
+    return topNode->data;
 }
