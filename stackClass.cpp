@@ -5,7 +5,7 @@
 stackClass *topNode = nullptr;
 
 //Takes char data and push it into the stack
-void push(char _inValue){
+void stackClass::push(char _inValue){
     stackClass* newNode = new stackClass;
     newNode -> data = _inValue;
     newNode -> stackClass::nextNode = topNode;
@@ -13,14 +13,14 @@ void push(char _inValue){
 }
 
 //Takes string and turns it into a series of push function to automatically push into stack
-void pushString(std::string _inString){
+void stackClass::pushString(std::string _inString){
     for (char charInString : _inString){
         push(charInString);
     }
 }
 
 //Call to check if stack is empty, returns boolean of stack emptiness status
-bool empty(){
+bool stackClass::isEmpty(){
     if(topNode == NULL){
         std::cout << "Stack is empty" << std::endl;
         return true;
@@ -31,7 +31,7 @@ bool empty(){
 }
 
 //Returns the popped value
-char pop(){
+char stackClass::pop(){
     if(topNode != NULL){
         char dataPopped = topNode -> data;
         topNode = topNode -> nextNode;
@@ -43,7 +43,7 @@ char pop(){
 }
 
 //Prints out stack values back to back (without spaces) without popping stack
-void display(){
+void stackClass::display(){
     if(topNode != NULL){
         stackClass* pointer = new stackClass;
         pointer = topNode;
@@ -69,7 +69,7 @@ void display(){
 }
 
 //Returns size of stack 
-int size(){
+int stackClass::size(){
     if(topNode != NULL){
         struct stackClass* pointer = new struct stackClass;
         pointer = topNode;
