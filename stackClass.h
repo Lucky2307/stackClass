@@ -5,26 +5,19 @@
 
 class stackClass
 {
-public:
-    //stackClass(/* args */);
-    //~stackClass();
+    private:
+        stackClass *topNode = nullptr;
 
-    char data;
-    stackClass *nextNode;
+    public:
 
-    void push(char _inValue);
-    void pushString(std::string _inString);
-    bool empty();
-    char pop();
-    void display();
-    int size();
+        char data;
+        stackClass *nextNode;
+
+        void push(char _inValue);
+        void pushString(std::string _inString);
+        bool isEmpty();
+        char pop();
+        void display();
+        int size();
+        char peekTop();
 };
-
-// stackClass::stackClass(/* args */)
-// {
-// }
-
-// stackClass::~stackClass()
-// {
-// }
-
